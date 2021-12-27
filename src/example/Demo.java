@@ -19,13 +19,14 @@ public class Demo {
 
         // Ghi file
         FileWriter fileWriter = new FileWriter(file);
-        fileWriter.write("Hello1\n");
+        String str1 = "Hello";
+        fileWriter.write(str1 + "\n");
         fileWriter.write("Hello2\n");
         fileWriter.write("Hello3");
         fileWriter.close(); // Phải đóng luồng thì mới ghi được file
 
 
-        // Ghi file bằng PrintWriter
+        // Ghi file bằng PrintWriter (tiện hơn, có thể dùng print, println hoặc printf)
         PrintWriter printWriter = new PrintWriter("src/example/demoPrintWriter");
         printWriter.println("Hello anh em");
         printWriter.print(2);
@@ -35,7 +36,7 @@ public class Demo {
         FileReader fileReader = new FileReader(file);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
         String str;
-        while ((str = bufferedReader.readLine()) != null){
+        while ((str = bufferedReader.readLine()) != null) {
             System.out.println(str);
         }
         bufferedReader.close();
@@ -64,8 +65,9 @@ public class Demo {
                 System.out.println(line);
             }
 
+        } catch (EOFException e) {
         } catch (IOException e) {
-            System.out.println();
+            e.printStackTrace();
         }
     }
 }
