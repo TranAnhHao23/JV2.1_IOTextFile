@@ -24,6 +24,14 @@ public class Demo {
         fileWriter.write("Hello3");
         fileWriter.close(); // Phải đóng luồng thì mới ghi được file
 
+
+        // Ghi file bằng PrintWriter
+        PrintWriter printWriter = new PrintWriter("src/example/demoPrintWriter");
+        printWriter.println("Hello anh em");
+        printWriter.print(2);
+        printWriter.close();
+
+
         FileReader fileReader = new FileReader(file);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
         String str;
